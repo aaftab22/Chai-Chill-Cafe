@@ -1,0 +1,137 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+    margin: 0;
+    color: white;
+}
+header{
+    height: 100vh;
+    background: linear-gradient(rgba(180, 106, 106, 0.60), rgba(0, 0, 0, 0.64)), url("header_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    text-align: center;
+}  
+header span{
+    text-align: center;
+    font-size: 80px;
+    position: relative;
+    top: 20vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+    border-radius: 30px;
+    padding: 40px;
+}
+nav{
+    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50));
+    padding: 10px;
+    margin: 0%;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    list-style: none;
+}
+a{ 
+    font-size: x-large;
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    text-align: center;
+    margin-bottom: 20vh;
+}
+
+#menuSection{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("menu\ background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menuItems{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
+}
+.menuItems img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+.menuItems span{
+    width: 300px;
+    height: 500px;
+    color: black;
+    padding: 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+}
+h1{
+    font-size: 40px;
+}
+.menuItems p{
+    font-size: 20px;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 3vh;
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+#OrderOnlineSection{
+    background-image:url(cupcakeBG2.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.607), rgba(171, 71, 205, 0.6)), url("cupcakeBG2.png");
+    background-size: cover;
+}
+
+#OrderOnlineSection, button{
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(171, 71, 205);
+    font-size: large;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+#OrderOnlineSection{
+    border: 2px solid white;
+}
+
+#orderOnlineForm p{
+    font-size: large;
+    text-align: left;
+}
+#orderOnlineForm input, select{    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: transparent;
+    border: 2px solid white;
+    height: 5vh;
+    color: white;
+    padding: 5px;
+    font-size: large;
+}
+select option{
+    border: 1px solid #000;
+    background-color:rgba(246, 12, 223, 0.603);
+}
+
+#orderConfirmed, #orderTracking{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.64));
+    font-size: large;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+footer p{
+    font-size: large;
+}

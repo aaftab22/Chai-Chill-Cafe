@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>In Transit </title>
+    <link href="/css/processOrder.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div id="main">
+    <h1 align="center"> Order Accpted Sucessfully </h1>
+
+<form action="/driver/dropoff/<%=orders._id %>" method="POST" enctype="multipart/form-data">
+<div id="displayOrder" >
+<p> Customer Name: <%=orders.customerName %></p>
+<p> Customer Adress: <%=orders.customerAddress %></p>
+<p> Price: <%=orders.orderPrice %></p>
+<img src="https://i.pinimg.com/originals/5e/f9/d7/5ef9d70b03d22b1acd145b9422d3a33f.gif" alt="" >
+
+<div id="completeOrder">
+<p style="text-align:center"> To Complete The Delivary  <br> Tap Deliverd & Upload The Image </p>
+
+
+<p><input type="radio"  required> Delivered</p>
+<p> Upload the Image <input type="file" name="image" required> </p>
+
+<button id="btn" type="submit" >Order Complete</button>
+</div>
+</div>
+</form>
+
+    
+</div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai & Chill</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                 <li><a href="#"> HOME </a> </li> 
+                 <li><a href="#"> MENU </a> </li> 
+                 <li><a href="#"> ORDER ONLINE </a> </li> 
+                 <li><a href="../../ORDER_PROCESSING_G03/Views/orderlist.ejs"> ORDER STATUS </a> </li> 
+                 <li><a href="#"> ABOUT US  </a> </li> 
+            </ul>
+        </nav>
+        <span>Chai & Chill CAFE</span>
+    </header>
+    
+    <main>
+        <section id="menuSection">
+            <h1>Menu</h1>
+            <div class="menuItems">
+                <% for(let current of menuList ) { %>
+                    
+                    <span> 
+                        <h2> <%= current.itemName %> </h2> 
+                        <img src="<%= current.itemUrl %>" alt="foodDishPhoto">
+                        <h2>$<%= current.itemPrice %></h2>
+                        <p><%= current.itemDescription %></p>
+                    </span>
+
+                    <% } %>
+            </div>
+        </section>
+
+        <section id="OrderOnlineSection">
+            <h1> Order Form </h1>
+            <form action="/orderOnline" method="post">
+                <table id="orderOnlineForm"  align="center">
+                    <tr>
+                        <td><p>Enter Full Name :</p></td>
+                        <td><input type="text" name="fullName" required></td>
+                    </tr>
+                    <tr>
+                        <td><p>Enter Mobile Number :</p></td>
+                        <td><input type="text" name="mobileNumber" required></td>
+                    </tr>
+                    <tr>
+                        <td><p>Enter Delivery Address :</p></td>
+                        <td><input type="text" name="address" required></td>
+                    </tr>
+                    <tr>
+                        <td><p>Enter Your Order :</p></td>
+                        <!-- <td><input type="text" name="itemOrder"></td> -->
+                        <td>
+                            <select name="orderedItem" required>
+                                <% for(let current of menuList ) { %>
+                                    <option value="<%= current.itemName %>"><%= current.itemName %> (<%= current.itemPrice  %>)</option>
+                                <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button>ORDER NOW</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <% if(orderConfirmed){ %>
+                <div id="orderConfirmed">
+                    <h3>Order is RECEIVED. You will get update shortly when order ready for delivery. </h3>
+                    <h3>Your order ID is: <%= orderId %></h3>
+                    <a href="../../ORDER_PROCESSING_G03/Views/orderlist.ejs"></a>
+                </div>
+            <% } %>
+        </section>
+        
+        <section id="OrderTrackingSection">
+            <h1> Order Status </h1>
+            <form action="/orderTrack" method="post">
+                <table id="orderOnlineForm"  align="center">
+                    <tr>
+                        <td><input type="text" placeholder="Enter Order ID here" name="trackNumber"></td>
+                        <td colspan="2" align="center"> <button>Track Order</button> </td>
+                    </tr>
+                </table>
+
+            </form>
+            <h1 id="orderTracking">
+            <% if (orderStatus) { %>
+                <%= orderStatus %></p>
+            <% } else{ %>
+                <%= orderStatus %>
+            <% } %>
+            </h1>
+        </section>
+
+    </main>
+
+    <footer>
+        <p> 290 Bremner Blvd, Toronto</p>
+        <p> +1 (416) 415-2000 </p>
+        <p> 9:00 AM - 1:00 AM </p>
+        <a href="#menuSection"><p> MENU </p></a>
+        <p> ORDER ONLINE </p>
+        <a href="../../ORDER_PROCESSING_G03/Views/orderlist.ejs"><p> ORDER STATUS</p>  </a>
+    </footer>
+
+</body>
+</html>

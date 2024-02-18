@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .order-info {
+            border-bottom: 1px solid grey;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body class="lst">
+    <nav class="nv">
+        <a href="/">Home</a>
+        <a href="#">Contact Us</a>
+        <a href="/search">Search Order</a>
+    </nav>
+    
+    <div class="lst1">
+        <h1>Orders</h1>
+        <% for (let searchlist of list) { %>
+            <div class="order-info">
+                <p><b>Customer Name:</b> <%= searchlist.customerName %>
+                </p>
+                <p><b>Customer Number:</b> <%= searchlist.customerNumber %>
+                </p>
+                <p><b>Customer Address:</b> <%= searchlist.customerAddress %>
+                </p>
+                <p><b>Items Ordered</b> <%= searchlist.orderedItem %>
+                </p>
+                <p><b>Date Of Order:</b> <%= searchlist.orderDate %>
+                </p>
+                <p><b>Total Price:</b> <%= searchlist.orderPrice %>
+                </p>
+                <p><b>Order Status:</b> <%= searchlist.orderStatus %>
+                </p>
+            </div>
+            <% } %>
+    </div>
+</body>
+
+</html>
